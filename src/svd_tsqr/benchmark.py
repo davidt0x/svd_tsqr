@@ -1,10 +1,8 @@
+from __future__ import annotations
 
 import time
+
 import cupy as cp
-import numpy as np
-
-
-from cupyx.profiler import benchmark
 
 
 def svd(A, mod):
@@ -12,7 +10,7 @@ def svd(A, mod):
     return U, S, V
 
 
-#%%
+# %%
 N = 10000
 
 B = cp.random.random((N, N), dtype=cp.float32)

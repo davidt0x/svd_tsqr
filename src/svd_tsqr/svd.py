@@ -1,10 +1,13 @@
-#%%
+# %
 # import numpy as np
-import cupy as np
+from __future__ import annotations
+
 import functools
 
+import cupy as np
+
 m = 300_000
-n = int(m/3000)
+n = int(m / 3000)
 
 A = np.random.random((m, n))
 
@@ -24,9 +27,10 @@ def unique_R(R):
     D = np.diag(np.sign(np.diag(R)))
     return np.dot(D, R)
 
+
 R_gt = unique_R(R_gt)
 
-#%%
+# %%
 
 # Split A into chunks
 num_chunks = 100
